@@ -1,0 +1,90 @@
+<!-- AI Chatbot -->
+<div id="chatbot-container" class="fixed bottom-6 right-6 z-50 hidden">
+    <div class="bg-white rounded-t-lg shadow-xl w-80 overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold" data-translate="chatbot_title">Assistant Virtuel</h3>
+            <button id="close-chatbot" class="text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="chatbot-messages" class="h-64 p-4 overflow-y-auto bg-gray-50">
+            <div class="mb-4">
+                <div class="bg-blue-100 rounded-lg p-3 max-w-xs">
+                    <p data-translate="chatbot_welcome">Bonjour! Comment puis-je vous aider aujourd'hui?</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 border-t">
+            <div class="flex">
+                <input type="text" id="chatbot-input" placeholder="Posez votre question..." 
+                       class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       data-translate="chatbot_placeholder">
+                <button id="send-message" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="open-chatbot" class="fixed bottom-6 right-6 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-40 hover:bg-blue-700 transition duration-300">
+    <i class="fas fa-robot text-2xl"></i>
+</button>
+
+<script>
+    // Chatbot functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const openChatbot = document.getElementById('open-chatbot');
+        const closeChatbot = document.getElementById('close-chatbot');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const sendMessage = document.getElementById('send-message');
+        
+        openChatbot.addEventListener('click', function() {
+            chatbotContainer.classList.toggle('hidden');
+        });
+        
+        closeChatbot.addEventListener('click', function() {
+            chatbotContainer.classList.add('hidden');
+        });
+        
+        function addMessage(message, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-4 flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = `rounded-lg p-3 max-w-xs ${isUser ? 'bg-blue-600 text-white' : 'bg-blue-100'}`;
+            contentDiv.textContent = message;
+            
+            messageDiv.appendChild(contentDiv);
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        sendMessage.addEventListener('click', function() {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatbotInput.value = '';
+                
+                // Simulate AI response (in a real implementation, this would call an API)
+                setTimeout(() => {
+                    const responses = [
+                        "Je comprends votre question. Pouvez-vous préciser votre demande?",
+                        "Nous pouvons certainement vous aider avec cela. Un membre de notre équipe peut vous contacter.",
+                        "Pour cette demande, je vous recommande de consulter notre section Services sur le site.",
+                        "Merci pour votre question. Je vais rechercher les informations nécessaires."
+                    ];
+                    addMessage(responses[Math.floor(Math.random() * responses.length)], false);
+                }, 1000);
+            }
+        });
+        
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage.click();
+            }
+        });
+    });
+</script>
