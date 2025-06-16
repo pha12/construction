@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-HAKIM CONSTRUCTION & SERVICE SARL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RTL support */
+        [dir="rtl"] .text-right {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .flex-row-reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                z-index: 1000;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-blue-600 text-white p-2 rounded mr-3">
+                    <i class="fas fa-building text-2xl"></i>
+                </div>
+                <h1 class="text-xl md:text-2xl font-bold text-blue-800">AL-HAKIM CONSTRUCTION & SERVICE</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative group">
+                    <button class="flex items-center text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-language mr-1"></i>
+                        <span id="current-lang">FR</span>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-24 bg-white rounded-md shadow-lg hidden group-hover:block z-50">
+                        <a href="#" data-lang="fr" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Français</a>
+                        <a href="#" data-lang="en" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">English</a>
+                        <a href="#" data-lang="ar" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">العربية</a>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-blue-600 font-medium hover:text-blue-800" data-translate="home">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600" data-translate="services">Nos Offres</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600" data-translate="about">À propos</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600" data-translate="portfolio">Réalisations</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600" data-translate="blog">Actualités</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600" data-translate="contact">Contact</a>
+                </nav>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <a href="#home" class="py-2 px-4 hover:bg-gray-100" data-translate="home">Accueil</a>
+                <a href="#services" class="py-2 px-4 hover:bg-gray-100" data-translate="services">Nos Offres</a>
+                <a href="#about" class="py-2 px-4 hover:bg-gray-100" data-translate="about">À propos</a>
+                <a href="#portfolio" class="py-2 px-4 hover:bg-gray-100" data-translate="portfolio">Réalisations</a>
+                <a href="#blog" class="py-2 px-4 hover:bg-gray-100" data-translate="blog">Actualités</a>
+                <a href="#contact" class="py-2 px-4 hover:bg-gray-100" data-translate="contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6" data-translate="hero_title">Solutions Intégrées de Construction et de Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-translate="hero_desc">Votre partenaire de confiance pour des solutions complètes en construction et services urbains à Djibouti.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-translate="discover_btn">Découvrez nos solutions sur mesure</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-blue-800 text-white border-2 border-white px-6 py-3 rounded-lg font-medium transition duration-300" data-translate="contact_btn">Contactez-nous pour un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-translate="feature1_title">Construction</h3>
+                    <p class="text-gray-600" data-translate="feature1_desc">Résidentielle, commerciale et industrielle avec des normes de qualité élevées.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hard-hat text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-translate="feature2_title">Location d'équipements</h3>
+                    <p class="text-gray-600" data-translate="feature2_desc">Machinerie lourde et véhicules de support pour vos projets.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-translate="feature3_title">Main-d'œuvre qualifiée</h3>
+                    <p class="text-gray-600" data-translate="feature3_desc">Personnel formé et gestion des permis de travail.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-file-contract text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-translate="feature4_title">Solutions administratives</h3>
+                    <p class="text-gray-600" data-translate="feature4_desc">Conseil réglementaire et gestion des autorisations légales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-translate="services_title">Nos Solutions Complètes</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Construction Card -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <img src="images/hakim super.jpg" alt="Construction Team" >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-translate="service1_title">Construction et Contracting</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service1_item1">Exécution de projets résidentiels, commerciaux et industriels</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service1_item2">Services de maintenance et rénovation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service1_item3">Conception structurelle innovante</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Employment Solutions Card -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-translate="service2_title">Solutions d'Emploi</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service2_item1">Main-d'œuvre qualifiée et formée</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service2_item2">Facilitation des permis de travail</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service2_item3">Gestion des dossiers du personnel</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Equipment Rental Card -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-truck-pickup text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-translate="service3_title">Location d'Équipements</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service3_item1">Machinerie lourde pour projets de construction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service3_item2">Véhicules de support logistique</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service3_item3">Maintenance et assistance technique</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Administrative Solutions Card -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-file-alt text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3" data-translate="service4_title">Solutions Administratives</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service4_item1">Permis de conduire et autorisations légales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service4_item2">Conseil réglementaire pour entreprises</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span data-translate="service4_item3">Gestion des formalités administratives</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-translate="about_title">Notre Histoire et Notre Engagement</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <img src="images/drapeau.jpg" alt="Construction Team" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3" data-translate="history_title">Notre Histoire</h3>
+                        <p class="text-gray-600" data-translate="history_desc">Fondée à Djibouti, AL-HAKIM CONSTRUCTION & SERVICE SARL s'est rapidement imposée comme un acteur clé dans le secteur de la construction et des services urbains. Depuis notre création, nous avons construit une réputation solide basée sur la qualité, l'innovation et le respect des engagements.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3" data-translate="vision_title">Notre Vision</h3>
+                        <p class="text-gray-600" data-translate="vision_desc">Devenir le leader dans le domaine de la construction et des services urbains à Djibouti et dans la région, en établissant des standards d'excellence et en contribuant au développement durable de notre communauté.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3" data-translate="mission_title">Notre Mission</h3>
+                        <p class="text-gray-600" data-translate="mission_desc">Fournir des projets de haute qualité répondant aux besoins de la communauté tout en promouvant le développement durable. Nous nous engageons à délivrer des solutions innovantes qui améliorent la qualité de vie tout en respectant l'environnement.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3" data-translate="values_title">Nos Valeurs</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-blue-600 mb-1" data-translate="value1_title">Qualité et durabilité</h4>
+                                <p class="text-sm text-gray-600" data-translate="value1_desc">Nous nous engageons à fournir des travaux de qualité qui résistent à l'épreuve du temps.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-blue-600 mb-1" data-translate="value2_title">Innovation et créativité</h4>
+                                <p class="text-sm text-gray-600" data-translate="value2_desc">Nous adoptons les dernières technologies et méthodes pour des solutions optimales.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-blue-600 mb-1" data-translate="value3_title">Conformité légale</h4>
+                                <p class="text-sm text-gray-600" data-translate="value3_desc">Tous nos projets respectent strictement les réglementations en vigueur.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold text-blue-600 mb-1" data-translate="value4_title">Relations clients</h4>
+                                <p class="text-sm text-gray-600" data-translate="value4_desc">Nous bâtissons des relations solides basées sur la confiance et la transparence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-blue-800 mb-8" data-translate="team_title">Notre Équipe</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                            <img src="images/post.jpg" alt="Loukman Mahmoud" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold">Loukman Mahmoud</h4>
+                        <p class="text-blue-600 mb-3" data-translate="team1_position">Directeur Général</p>
+                        <p class="text-gray-600" data-translate="team1_desc">Avec plus de 15 ans d'expérience dans le secteur, Loukman dirige notre entreprise avec une vision stratégique et un engagement envers l'excellence.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                            <img src="images/commecial.jpg" alt="Directrice Technique" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold">Amina Hassan</h4>
+                        <p class="text-blue-600 mb-3" data-translate="team2_position">Directrice Technique</p>
+                        <p class="text-gray-600" data-translate="team2_desc">Ingénieure en génie civil avec une expertise en conception structurelle et gestion de projets complexes.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                            <img src="images/projetchef.jpg" alt="Responsable Administratif" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold">Mohamed Ali</h4>
+                        <p class="text-blue-600 mb-3" data-translate="team3_position">Responsable Administratif</p>
+                        <p class="text-gray-600" data-translate="team3_desc">Spécialiste en conformité réglementaire et gestion des ressources humaines, garantissant le bon fonctionnement de nos opérations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-translate="news_title">Actualités et Insights du Secteur</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sustainable Construction" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span data-translate="news1_date">15 Juin 2023</span>
+                            <span class="mx-2">•</span>
+                            <span data-translate="news1_category">Tendances</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-translate="news1_title">L'évolution des normes de construction durable à Djibouti</h3>
+                        <p class="text-gray-600 mb-4" data-translate="news1_desc">Comment AL-HAKIM s'adapte aux nouvelles réglementations environnementales et intègre des pratiques durables dans tous ses projets.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center" data-translate="read_more">
+                            Lire plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Construction Technology" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span data-translate="news2_date">2 Mai 2023</span>
+                            <span class="mx-2">•</span>
+                            <span data-translate="news2_category">Innovation</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-translate="news2_title">Les nouvelles technologies révolutionnant le BTP</h3>
+                        <p class="text-gray-600 mb-4" data-translate="news2_desc">Découvrez comment nous intégrons les dernières innovations technologiques pour améliorer l'efficacité et la sécurité sur nos chantiers.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center" data-translate="read_more">
+                            Lire plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gray-200 overflow-hidden">
+                        <img src="images/equipe.jpg" alt="Team Work" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span data-translate="news3_date">10 Avril 2023</span>
+                            <span class="mx-2">•</span>
+                            <span data-translate="news3_category">Cas d'étude</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-translate="news3_title">Notre projet phare: Entrepôts en Zone Franche</h3>
+                        <p class="text-gray-600 mb-4" data-translate="news3_desc">Retour sur la conception et construction de nos installations de stockage modernes avec systèmes de gestion avancés pour le secteur logistique.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 flex items-center" data-translate="read_more">
+                            Lire plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-translate="view_all_articles">
+                    Voir tous les articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-translate="portfolio_title">Nos Réalisations</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="images/drapeau.jpg" alt="Warehouse Project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-800 bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium border-2 border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition duration-300" data-translate="view_details">
+                                Voir les détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" data-translate="project1_title">Entrepôts en Zone Franche</h3>
+                        <p class="text-gray-600 mb-3" data-translate="project1_desc">Conception et construction d'installations de stockage modernes avec systèmes de gestion avancés.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project1_tag1">Logistique</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project1_tag2">Commercial</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="images/cite.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-800 bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium border-2 border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition duration-300" data-translate="view_details">
+                                Voir les détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" data-translate="project2_title">Complexe Résidentiel "Les Palmiers"</h3>
+                        <p class="text-gray-600 mb-3" data-translate="project2_desc">Construction d'un complexe de 50 appartements avec espaces communs et infrastructures modernes.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project2_tag1">Résidentiel</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project2_tag2">Durable</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">2022</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 bg-gray-200 overflow-hidden relative">
+                        <img src="images/hakin.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-800 bg-opacity-70 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="text-white text-lg font-medium border-2 border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition duration-300" data-translate="view_details">
+                                Voir les détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2" data-translate="project3_title">Centre Commercial "Nouvelle Ville"</h3>
+                        <p class="text-gray-600 mb-3" data-translate="project3_desc">Réalisation d'un centre commercial moderne avec 25 boutiques et espaces de restauration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project3_tag1">Commercial</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full" data-translate="project3_tag2">Design</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">2021</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Section -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-blue-800 mb-8" data-translate="gallery_title">Galerie de Nos Projets</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/terrain.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/pla.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/terrain 2.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/terrain 2.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/plan super.png">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/pla.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/hakin.jpg">
+                    </div>
+                    <div class="h-48 bg-gray-200 overflow-hidden rounded-lg">
+                        <img src="images/drapeau.jpg">
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-translate="view_all_projects">
+                        Voir tous nos projets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-translate="testimonials_title">Ce Que Disent Nos Clients</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="images/post.jpg" alt="Client 1" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ahmed Omar</h4>
+                            <p class="text-sm text-gray-600" data-translate="testimonial1_position">Directeur, Logistique Djibouti</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-translate="testimonial1_text">"AL-HAKIM a livré notre entrepôt dans les délais et avec une qualité exceptionnelle. Leur équipe était professionnelle et réactive à toutes nos demandes. Nous prévoyons déjà de nouveaux projets avec eux."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="images/commecial.jpg" alt="Client 2" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Fatouma Ali</h4>
+                            <p class="text-sm text-gray-600" data-translate="testimonial2_position">Propriétaire, Boutique Moderne</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-translate="testimonial2_text">"La rénovation de notre espace commercial par AL-HAKIM a dépassé nos attentes. Ils ont su comprendre notre vision et l'ont matérialisée avec créativité et professionnalisme. Je les recommande vivement."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="images/projetchef.jpg" alt="Client 3" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mohamed Hassan</h4>
+                            <p class="text-sm text-gray-600" data-translate="testimonial3_position">CEO, Import-Export Ltd</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic" data-translate="testimonial3_text">"Nous avons fait appel à AL-HAKIM pour la location d'équipements lourds et leur service est impeccable. Machines bien entretenues, livraison ponctuelle et équipe compétente. Un partenaire fiable."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-translate="contact_title">Travaillons Ensemble</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6" data-translate="contact_form_title">Contactez-nous</h3>
+                        
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2" data-translate="form_name">Nom Complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2" data-translate="form_email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2" data-translate="form_subject">Sujet</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2" data-translate="form_message">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-translate="form_submit">
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-6" data-translate="contact_info_title">Nos Coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800" data-translate="address_title">Adresse</h4>
+                                    <p class="text-gray-600">Lotissement Nagad, Djibouti</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800" data-translate="phone_title">Téléphone</h4>
+                                    <p class="text-gray-600">+253 7770 34 36</p>
+                                    <p class="text-gray-600">+253 7720 1274</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">alhakimconstruction1@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800" data-translate="hours_title">Heures d'Ouverture</h4>
+                                    <p class="text-gray-600" data-translate="hours_week">Lundi-Vendredi: 8h00-17h00</p>
+                                    <p class="text-gray-600" data-translate="hours_sat">Samedi: 8h00-13h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4" data-translate="follow_title">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 bg-gray-200">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.007768447784!2d43.13196931233298!3d11.572880730469082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1623553a1f5c3b3b%3A0x1a5c7b5b1c0d4b1c!2sLotissement%20Nagad%2C%20Djibouti!5e0!3m2!1sen!2s!4v1623553a1f5c3b3b!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-2 rounded mr-3">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">AL-HAKIM CONSTRUCTION & SERVICE</h3>
+                    </div>
+                    <p class="text-gray-400" data-translate="footer_desc">Votre partenaire de confiance pour des solutions complètes en construction et services urbains à Djibouti.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-translate="quick_links">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300" data-translate="home">Accueil</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300" data-translate="services">Nos Offres</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300" data-translate="about">À propos</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300" data-translate="portfolio">Réalisations</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300" data-translate="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-translate="our_services">Nos Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-translate="service1_title">Construction</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-translate="service3_title">Location d'équipements</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-translate="service2_title">Main-d'œuvre qualifiée</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300" data-translate="service4_title">Solutions administratives</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-translate="contact">Contact</h4>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-2">Lotissement Nagad, Djibouti</p>
+                        <p class="mb-2">+253 7770 34 36</p>
+                        <p class="mb-2">alhakimconstruction1@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0" data-translate="copyright">© 2023 AL-HAKIM CONSTRUCTION & SERVICE SARL. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            'fr': {
+                'home': 'Accueil',
+                'services': 'Nos Offres',
+                'about': 'À propos',
+                'portfolio': 'Réalisations',
+                'blog': 'Actualités',
+                'contact': 'Contact',
+                'hero_title': 'Solutions Intégrées de Construction et de Services',
+                'hero_desc': 'Votre partenaire de confiance pour des solutions complètes en construction et services urbains à Djibouti.',
+                'discover_btn': 'Découvrez nos solutions sur mesure',
+                'contact_btn': 'Contactez-nous pour un devis',
+                'feature1_title': 'Construction',
+                'feature1_desc': 'Résidentielle, commerciale et industrielle avec des normes de qualité élevées.',
+                'feature2_title': 'Location d\'équipements',
+                'feature2_desc': 'Machinerie lourde et véhicules de support pour vos projets.',
+                'feature3_title': 'Main-d\'œuvre qualifiée',
+                'feature3_desc': 'Personnel formé et gestion des permis de travail.',
+                'feature4_title': 'Solutions administratives',
+                'feature4_desc': 'Conseil réglementaire et gestion des autorisations légales.',
+                'services_title': 'Nos Solutions Complètes',
+                'service1_title': 'Construction et Contracting',
+                'service1_item1': 'Exécution de projets résidentiels, commerciaux et industriels',
+                'service1_item2': 'Services de maintenance et rénovation',
+                'service1_item3': 'Conception structurelle innovante',
+                'service2_title': 'Solutions d\'Emploi',
+                'service2_item1': 'Main-d\'œuvre qualifiée et formée',
+                'service2_item2': 'Facilitation des permis de travail',
+                'service2_item3': 'Gestion des dossiers du personnel',
+                'service3_title': 'Location d\'Équipements',
+                'service3_item1': 'Machinerie lourde pour projets de construction',
+                'service3_item2': 'Véhicules de support logistique',
+                'service3_item3': 'Maintenance et assistance technique',
+                'service4_title': 'Solutions Administratives',
+                'service4_item1': 'Permis de conduire et autorisations légales',
+                'service4_item2': 'Conseil réglementaire pour entreprises',
+                'service4_item3': 'Gestion des formalités administratives',
+                'about_title': 'Notre Histoire et Notre Engagement',
+                'history_title': 'Notre Histoire',
+                'history_desc': 'Fondée à Djibouti, AL-HAKIM CONSTRUCTION & SERVICE SARL s\'est rapidement imposée comme un acteur clé dans le secteur de la construction et des services urbains. Depuis notre création, nous avons construit une réputation solide basée sur la qualité, l\'innovation et le respect des engagements.',
+                'vision_title': 'Notre Vision',
+                'vision_desc': 'Devenir le leader dans le domaine de la construction et des services urbains à Djibouti et dans la région, en établissant des standards d\'excellence et en contribuant au développement durable de notre communauté.',
+                'mission_title': 'Notre Mission',
+                'mission_desc': 'Fournir des projets de haute qualité répondant aux besoins de la communauté tout en promouvant le développement durable. Nous nous engageons à délivrer des solutions innovantes qui améliorent la qualité de vie tout en respectant l\'environnement.',
+                'values_title': 'Nos Valeurs',
+                'value1_title': 'Qualité et durabilité',
+                'value1_desc': 'Nous nous engageons à fournir des travaux de qualité qui résistent à l\'épreuve du temps.',
+                'value2_title': 'Innovation et créativité',
+                'value2_desc': 'Nous adoptons les dernières technologies et méthodes pour des solutions optimales.',
+                'value3_title': 'Conformité légale',
+                'value3_desc': 'Tous nos projets respectent strictement les réglementations en vigueur.',
+                'value4_title': 'Relations clients',
+                'value4_desc': 'Nous bâtissons des relations solides basées sur la confiance et la transparence.',
+                'team_title': 'Notre Équipe',
+                'team1_position': 'Directeur Général',
+                'team1_desc': 'Avec plus de 15 ans d\'expérience dans le secteur, Loukman dirige notre entreprise avec une vision stratégique et un engagement envers l\'excellence.',
+                'team2_position': 'Directrice Technique',
+                'team2_desc': 'Ingénieure en génie civil avec une expertise en conception structurelle et gestion de projets complexes.',
+                'team3_position': 'Responsable Administratif',
+                'team3_desc': 'Spécialiste en conformité réglementaire et gestion des ressources humaines, garantissant le bon fonctionnement de nos opérations.',
+                'news_title': 'Actualités et Insights du Secteur',
+                'news1_date': '15 Juin 2023',
+                'news1_category': 'Tendances',
+                'news1_title': 'L\'évolution des normes de construction durable à Djibouti',
+                'news1_desc': 'Comment AL-HAKIM s\'adapte aux nouvelles réglementations environnementales et intègre des pratiques durables dans tous ses projets.',
+                'news2_date': '2 Mai 2023',
+                'news2_category': 'Innovation',
+                'news2_title': 'Les nouvelles technologies révolutionnant le BTP',
+                'news2_desc': 'Découvrez comment nous intégrons les dernières innovations technologiques pour améliorer l\'efficacité et la sécurité sur nos chantiers.',
+                'news3_date': '10 Avril 2023',
+                'news3_category': 'Cas d\'étude',
+                'news3_title': 'Notre projet phare: Entrepôts en Zone Franche',
+                'news3_desc': 'Retour sur la conception et construction de nos installations de stockage modernes avec systèmes de gestion avancés pour le secteur logistique.',
+                'read_more': 'Lire plus',
+                'view_all_articles': 'Voir tous les articles',
+                'portfolio_title': 'Nos Réalisations',
+                'project1_title': 'Entrepôts en Zone Franche',
+                'project1_desc': 'Conception et construction d\'installations de stockage modernes avec systèmes de gestion avancés.',
+                'project1_tag1': 'Logistique',
+                'project1_tag2': 'Commercial',
+                'project2_title': 'Complexe Résidentiel "Les Palmiers"',
+                'project2_desc': 'Construction d\'un complexe de 50 appartements avec espaces communs et infrastructures modernes.',
+                'project2_tag1': 'Résidentiel',
+                'project2_tag2': 'Durable',
+                'project3_title': 'Centre Commercial "Nouvelle Ville"',
+                'project3_desc': 'Réalisation d\'un centre commercial moderne avec 25 boutiques et espaces de restauration.',
+                'project3_tag1': 'Commercial',
+                'project3_tag2': 'Design',
+                'view_details': 'Voir les détails',
+                'gallery_title': 'Galerie de Nos Projets',
+                'view_all_projects': 'Voir tous nos projets',
+                'testimonials_title': 'Ce Que Disent Nos Clients',
+                'testimonial1_position': 'Directeur, Logistique Djibouti',
+                'testimonial1_text': '"AL-HAKIM a livré notre entrepôt dans les délais et avec une qualité exceptionnelle. Leur équipe était professionnelle et réactive à toutes nos demandes. Nous prévoyons déjà de nouveaux projets avec eux."',
+                'testimonial2_position': 'Propriétaire, Boutique Moderne',
+                'testimonial2_text': '"La rénovation de notre espace commercial par AL-HAKIM a dépassé nos attentes. Ils ont su comprendre notre vision et l\'ont matérialisée avec créativité et professionnalisme. Je les recommande vivement."',
+                'testimonial3_position': 'CEO, Import-Export Ltd',
+                'testimonial3_text': '"Nous avons fait appel à AL-HAKIM pour la location d\'équipements lourds et leur service est impeccable. Machines bien entretenues, livraison ponctuelle et équipe compétente. Un partenaire fiable."',
+                'contact_title': 'Travaillons Ensemble',
+                'contact_form_title': 'Contactez-nous',
+                'form_name': 'Nom Complet',
+                'form_email': 'Email',
+                'form_subject': 'Sujet',
+                'form_message': 'Message',
+                'form_submit': 'Envoyer le message',
+                'contact_info_title': 'Nos Coordonnées',
+                'address_title': 'Adresse',
+                'phone_title': 'Téléphone',
+                'hours_title': 'Heures d\'Ouverture',
+                'hours_week': 'Lundi-Vendredi: 8h00-17h00',
+                'hours_sat': 'Samedi: 8h00-13h00',
+                'follow_title': 'Suivez-nous',
+                'quick_links': 'Liens Rapides',
+                'our_services': 'Nos Services',
+                'footer_desc': 'Votre partenaire de confiance pour des solutions complètes en construction et services urbains à Djibouti.',
+                'copyright': '© 2023 AL-HAKIM CONSTRUCTION & SERVICE SARL. Tous droits réservés.'
+            },
+            'en': {
+                'home': 'Home',
+                'services': 'Our Services',
+                'about': 'About Us',
+                'portfolio': 'Projects',
+                'blog': 'News',
+                'contact': 'Contact',
+                'hero_title': 'Integrated Construction and Service Solutions',
+                'hero_desc': 'Your trusted partner for comprehensive construction and urban service solutions in Djibouti.',
+                'discover_btn': 'Discover our tailored solutions',
+                'contact_btn': 'Contact us for a quote',
+                'feature1_title': 'Construction',
+                'feature1_desc': 'Residential, commercial and industrial with high quality standards.',
+                'feature2_title': 'Equipment Rental',
+                'feature2_desc': 'Heavy machinery and support vehicles for your projects.',
+                'feature3_title': 'Skilled Workforce',
+                'feature3_desc': 'Trained personnel and work permit management.',
+                'feature4_title': 'Administrative Solutions',
+                'feature4_desc': 'Regulatory advice and legal authorization management.',
+                'services_title': 'Our Comprehensive Solutions',
+                'service1_title': 'Construction and Contracting',
+                'service1_item1': 'Execution of residential, commercial and industrial projects',
+                'service1_item2': 'Maintenance and renovation services',
+                'service1_item3': 'Innovative structural design',
+                'service2_title': 'Employment Solutions',
+                'service2_item1': 'Skilled and trained workforce',
+                'service2_item2': 'Work permit facilitation',
+                'service2_item3': 'Personnel file management',
+                'service3_title': 'Equipment Rental',
+                'service3_item1': 'Heavy machinery for construction projects',
+                'service3_item2': 'Logistics support vehicles',
+                'service3_item3': 'Maintenance and technical assistance',
+                'service4_title': 'Administrative Solutions',
+                'service4_item1': 'Driver\'s licenses and legal authorizations',
+                'service4_item2': 'Regulatory advice for businesses',
+                'service4_item3': 'Administrative formalities management',
+                'about_title': 'Our Story and Commitment',
+                'history_title': 'Our History',
+                'history_desc': 'Founded in Djibouti, AL-HAKIM CONSTRUCTION & SERVICE SARL quickly established itself as a key player in the construction and urban services sector. Since our creation, we have built a solid reputation based on quality, innovation and commitment.',
+                'vision_title': 'Our Vision',
+                'vision_desc': 'To become the leader in construction and urban services in Djibouti and the region, setting standards of excellence and contributing to the sustainable development of our community.',
+                'mission_title': 'Our Mission',
+                'mission_desc': 'To provide high-quality projects that meet community needs while promoting sustainable development. We are committed to delivering innovative solutions that improve quality of life while respecting the environment.',
+                'values_title': 'Our Values',
+                'value1_title': 'Quality and durability',
+                'value1_desc': 'We are committed to providing quality work that stands the test of time.',
+                'value2_title': 'Innovation and creativity',
+                'value2_desc': 'We adopt the latest technologies and methods for optimal solutions.',
+                'value3_title': 'Legal compliance',
+                'value3_desc': 'All our projects strictly comply with current regulations.',
+                'value4_title': 'Customer relationships',
+                'value4_desc': 'We build strong relationships based on trust and transparency.',
+                'team_title': 'Our Team',
+                'team1_position': 'General Manager',
+                'team1_desc': 'With over 15 years of experience in the sector, Loukman leads our company with strategic vision and a commitment to excellence.',
+                'team2_position': 'Technical Director',
+                'team2_desc': 'Civil engineer with expertise in structural design and complex project management.',
+                'team3_position': 'Administrative Manager',
+                'team3_desc': 'Specialist in regulatory compliance and human resources management, ensuring the smooth operation of our operations.',
+                'news_title': 'Industry News and Insights',
+                'news1_date': 'June 15, 2023',
+                'news1_category': 'Trends',
+                'news1_title': 'The evolution of sustainable construction standards in Djibouti',
+                'news1_desc': 'How AL-HAKIM adapts to new environmental regulations and integrates sustainable practices into all its projects.',
+                'news2_date': 'May 2, 2023',
+                'news2_category': 'Innovation',
+                'news2_title': 'New technologies revolutionizing construction',
+                'news2_desc': 'Discover how we integrate the latest technological innovations to improve efficiency and safety on our sites.',
+                'news3_date': 'April 10, 2023',
+                'news3_category': 'Case Study',
+                'news3_title': 'Our flagship project: Free Zone Warehouses',
+                'news3_desc': 'A look back at the design and construction of our modern storage facilities with advanced management systems for the logistics sector.',
+                'read_more': 'Read more',
+                'view_all_articles': 'View all articles',
+                'portfolio_title': 'Our Projects',
+                'project1_title': 'Free Zone Warehouses',
+                'project1_desc': 'Design and construction of modern storage facilities with advanced management systems.',
+                'project1_tag1': 'Logistics',
+                'project1_tag2': 'Commercial',
+                'project2_title': 'Residential Complex "Les Palmiers"',
+                'project2_desc': 'Construction of a 50-apartment complex with common areas and modern infrastructure.',
+                'project2_tag1': 'Residential',
+                'project2_tag2': 'Sustainable',
+                'project3_title': 'Shopping Center "Nouvelle Ville"',
+                'project3_desc': 'Completion of a modern shopping center with 25 stores and dining areas.',
+                'project3_tag1': 'Commercial',
+                'project3_tag2': 'Design',
+                'view_details': 'View details',
+                'gallery_title': 'Our Projects Gallery',
+                'view_all_projects': 'View all our projects',
+                'testimonials_title': 'What Our Clients Say',
+                'testimonial1_position': 'Director, Logistics Djibouti',
+                'testimonial1_text': '"AL-HAKIM delivered our warehouse on time and with exceptional quality. Their team was professional and responsive to all our requests. We are already planning new projects with them."',
+                'testimonial2_position': 'Owner, Modern Boutique',
+                'testimonial2_text': '"The renovation of our commercial space by AL-HAKIM exceeded our expectations. They understood our vision and materialized it with creativity and professionalism. I highly recommend them."',
+                'testimonial3_position': 'CEO, Import-Export Ltd',
+                'testimonial3_text': '"We called on AL-HAKIM for heavy equipment rental and their service is impeccable. Well-maintained machines, punctual delivery and competent team. A reliable partner."',
+                'contact_title': 'Let\'s Work Together',
+                'contact_form_title': 'Contact Us',
+                'form_name': 'Full Name',
+                'form_email': 'Email',
+                'form_subject': 'Subject',
+                'form_message': 'Message',
+                'form_submit': 'Send Message',
+                'contact_info_title': 'Our Contact Information',
+                'address_title': 'Address',
+                'phone_title': 'Phone',
+                'hours_title': 'Opening Hours',
+                'hours_week': 'Monday-Friday: 8:00 AM-5:00 PM',
+                'hours_sat': 'Saturday: 8:00 AM-1:00 PM',
+                'follow_title': 'Follow Us',
+                'quick_links': 'Quick Links',
+                'our_services': 'Our Services',
+                'footer_desc': 'Your trusted partner for comprehensive construction and urban service solutions in Djibouti.',
+                'copyright': '© 2023 AL-HAKIM CONSTRUCTION & SERVICE SARL. All rights reserved.'
+            },
+            'ar': {
+                'home': 'الرئيسية',
+                'services': 'خدماتنا',
+                'about': 'من نحن',
+                'portfolio': 'أعمالنا',
+                'blog': 'أخبار',
+                'contact': 'اتصل بنا',
+                'hero_title': 'حلول متكاملة للبناء والخدمات',
+                'hero_desc': 'شريككم الموثوق به للحلول الشاملة في مجال البناء والخدمات الحضرية في جيبوتي.',
+                'discover_btn': 'اكتشف حلولنا المخصصة',
+                'contact_btn': 'اتصل بنا للحصول على عرض سعر',
+                'feature1_title': 'البناء',
+                'feature1_desc': 'سكني وتجاري وصناعي بمعايير جودة عالية.',
+                'feature2_title': 'تأجير المعدات',
+                'feature2_desc': 'معدات ثقيلة ومركبات دعم لمشاريعكم.',
+                'feature3_title': 'اليد العاملة الماهرة',
+                'feature3_desc': 'طاقم مدرب وإدارة تصاريح العمل.',
+                'feature4_title': 'الحلول الإدارية',
+                'feature4_desc': 'استشارات تنظيمية وإدارة التراخيص القانونية.',
+                'services_title': 'حلولنا الشاملة',
+                ' },
